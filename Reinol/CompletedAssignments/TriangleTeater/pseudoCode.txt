@@ -1,0 +1,26 @@
+Pseudocode Tester
+
+	Gets user input and verifies that it is in the correct format and is a valid double
+
+	prints out triangle information that is returned in triangle class
+
+
+Pseudocode Triangle
+
+	takes input from the tester and creates 3 points
+	
+	uses the values stored in these three points to sovle for lenght of sides using distance formula
+	
+	uses length of sides to calculate the angles between points using cosine law
+
+	uses length of sides to calculate perimiter
+	
+	uses length of sides to calculate area
+
+	checks to see if any angle is 90 degrees to verify if it is a right triangle
+
+	checks if all sides are equal to verigy if it is an equilateral triangle
+
+	else returns neither
+
+	returns all these values to be printed by tester
