@@ -20,11 +20,14 @@
 | 
 |  +-----------------------------------------------------------------------------  
 |  
-|  Description:  [Simulates a desired number of non betting Craps games and analyzes the results]  
+|  Description:  [Simulates a desired number of non betting Craps games and 
+| 					analyzes the results]  
 |                  
-|        Input:  [Program will prompt a user to provide an amount of games to be analyzed]    
+|        Input:  [Program will prompt a user to provide an amount of games 
+|				 	to be analyzed]    
 |  
-|       Output:  [Output will include several statistics about the games that were simulated]
+|       Output:  [Output will include several statistics about the games 
+| 					that were simulated]
 |
 |
 |     Process:  [1) The user is prompted to input the amount of games  
@@ -34,7 +37,8 @@
 |   Required Features Not Included:  
 |                [All features included]  
 |  
-|   Known Bugs:  [None I could find]  
+|   Known Bugs:  [if you have to roll the dice 10,000 times in one game the array 
+| 					throws an out of bounds exception]  
 |  *===========================================================================*/
 
 import java.text.DecimalFormat; // to format my output
@@ -45,19 +49,19 @@ public class Analyzer
 	public static void main(String[] args) // runs program 
 	{
 		int ammountOfGames = input ();
-		printer( ammountOfGames , gameCreation (ammountOfGames ) );	
+		printer( ammountOfGames , Craps.gameCreation (ammountOfGames ) );	
 	}
 	
 	
 	public static int input ()	//accepts input and verifies it
 	{
 		Scanner sc = new Scanner ( System.in );
-		System.out.println( "How many games would you like to analyze ( between 1 and 1,000,000 inclusive)" );
+		System.out.println( "How many games would you like to analyze ( between 1 and 1,000,000 inclusive )" );
 	
 		int ammountOfGames = 0;
 		do 
 		{
-			System.out.println ( "Please enter a whole integer value." );
+			System.out.println ( "Please enter a whole integer value ( between 1 and 1,000,000 inclusive )." );
 		    while ( !sc.hasNextInt () ) 
 		    {
 		        sc.nextLine (); // Clears the invalid input
@@ -70,19 +74,7 @@ public class Analyzer
 	}
 	
 	
-	public static Craps[] gameCreation ( int ammountOfGames ) // simulates the games and creates game objects
-	{
-		Craps[] Games = new Craps [ ammountOfGames + 1 ];
-		
-		for ( int currentGame = 0 ; currentGame < ammountOfGames ; currentGame++ )
-		{
-		Games [currentGame] = new Craps();
-		Games [currentGame].playGame();
-		}
-		return Games;
-	}
-
-	public static void printer ( int ammountOfGames , Craps[] Games ) 
+	public static void printer ( int ammountOfGames , Craps[] Games ) // prints the analyzed data
 	{
 		DecimalFormat df = new DecimalFormat ( "0.00000" );
 		
@@ -97,7 +89,7 @@ public class Analyzer
 		int placeHolder = 0;
 		
 		int [] tally = new int[ ammountOfGames+1 ];
-		int [] count = new int[ ammountOfGames+1 ];
+		int [] count = new int[ 10000 ]; // creating a large array to hold tally
 		
 		
 		for ( int currentGame = 0 ; currentGame < ammountOfGames ; currentGame++ )
@@ -129,13 +121,15 @@ public class Analyzer
 		System.out.println (" 3) Tally of how long each game lasted: ");
 		System.out.println ("");
 		
-		for ( placeHolder = 0 ; placeHolder < tally.length ; placeHolder ++ )
+		for ( placeHolder = 0 ; placeHolder < Games.length ; placeHolder ++ )
 		{
             temp = tally [ placeHolder ];
-            count [ temp ] ++;
+           count [ temp ] ++;
+            
         }
 		for ( placeHolder = 1 ; placeHolder < count.length ; placeHolder ++ )
 		{
+			
 		        if ( count [ placeHolder ] > 0 && count [ placeHolder ] == 1 )
 		        {
 		        	System.out.printf( "%2d occurs %6d times\n" , placeHolder , count [ placeHolder ] );

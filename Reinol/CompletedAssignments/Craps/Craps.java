@@ -34,7 +34,8 @@
 |	   Equations:  [None]
 | +-----------------------------------------------------------------------
 |
-|   Constructors:  [playGame - which creates a simulated version of a craps game]
+|   Constructors:  [game creation - which creates an array simulated 
+| 						version of a craps game]
 |
 |  Class Methods:  [playGame	 
 |					addTheDice]
@@ -44,7 +45,8 @@
 |						getTotalLosses 		void		int
 |						getTotalWins		void		int
 |						getOpenWin			void		int
-|						getOpenLoss			void		int]
+|						getOpenLoss			void		int
+|						resetGame			void]
 |						
 |  *===========================================================================*/
 public class Craps 
@@ -54,9 +56,9 @@ Die dieTwo = new Die ();
 
 int sides = 6;
 int rollCount = 0;
-int Sum;
-int value;
-int point;
+int Sum = 0;
+int value = 0;
+int point = 0;
 int totalWins = 0;
 int totalLosses = 0;
 int openWin = 0;
@@ -64,8 +66,22 @@ int openLoss = 0;
 
 boolean result;
 
+	public static Craps[] gameCreation ( int ammountOfGames ) // simulates the games and creates game objects
+	{
+		Craps[] Games = new Craps [ ammountOfGames + 1 ];
+	
+		for ( int currentGame = 0 ; currentGame < ammountOfGames ; currentGame++ )
+		{
+			Games [currentGame] = new Craps();
+			Games [currentGame].playGame();
+		}
+	return Games;
+	}
+
+
 	public boolean playGame()	// simulates the game of craps
-	{			
+	{
+		resetGame ();
 	dieOne.rollDie (6);
 	dieTwo.rollDie (6);
 	rollCount ++;
@@ -164,7 +180,15 @@ boolean result;
 	
 	public void resetGame ()	// not sure how this is relevant to the program but it was in the specs XD
 	{
-		
+	sides = 6;
+	rollCount = 0;
+	Sum = 0;
+	value = 0;
+	point = 0;
+	totalWins = 0;
+	totalLosses = 0;
+	openWin = 0;
+	openLoss = 0;
 	}
 	
 	
