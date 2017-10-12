@@ -1,0 +1,38 @@
+class: csc421-181
+project: proj0
+student:jban 
+date: 9/3/2017
+
+grade: 3/5
+
+created template (#):		1/1
+basic test partial (%):		2/2
+bsaic test full (!):		0/2
+lateness:			 	  (0)/(3)
+  
+(#)
+- project directory created, files copied in
+  and submitted, no binaries or .out files committed.
+
+(%)
+- code written that compiles and runs
+
+(!)
+- project passes the full basic test; 
+  the makefile test runs without error
+
+
+commit:
+  # the log for the commit of graded program
+  r39 | jban | 2017-08-29 14:30:01 -0400 (Tue, 29 Aug 2017) | 1 line
+
+comments:
+  # comments on the program and grading
+
+./helloworld > helloworld.out
+diff helloworld.out helloworld.ref
+1c1
+< Hello World!df
+---
+> Hello world!
+make: *** [test] Error 1
