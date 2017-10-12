@@ -1,0 +1,53 @@
+Analyzer
+
+reads input
+
+ if input is viable 
+	create craps games in array of input quantity
+
+analyze data by cycling through array of objects
+
+	print out all analyzed data
+
+
+
+
+
+Craps
+
+roll two dice and sum;
+increment number of rolls;
+point = sum;
+if (point is 7 or is 11)
+	game is won;
+else if (point is (not 2), is (not 3) and is (not 12)) 
+{
+	do 
+	{
+	roll two dice and sum;
+	increment number of rolls;
+	value = sum;
+	} while (value is (not point) and is (not 7));
+
+	if (value is point)
+   	game is won;
+		else
+	   	game is lost;
+	else
+  game is lost;
+}
+
+runs through craps and return values
+
+
+
+
+
+
+
+Die
+
+
+Accepts number of sides of the dice 
+	randomly sellects number from one to number of sides
+		returns face value
