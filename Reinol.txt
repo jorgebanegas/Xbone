@@ -1,6 +1,8 @@
- working on creating 3 classes 
- 1) die class that can be calld from any game to roll a die that has 3-100 sides
- 2) craps class that creates a craps game that uses the die class to roll the dice
- 3) analyzer class that takes in data from the craps class to see how many iterations of games and other statistics
+Finished my assignment waiting on next one.
+
+Starting to work on personal projects on free time.
+
+
+
 
 
