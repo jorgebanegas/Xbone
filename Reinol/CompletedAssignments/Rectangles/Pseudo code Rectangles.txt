@@ -1,0 +1,24 @@
+Pseudo Code
+
+Tester
+
+Creates 4 rectangles and uses the newly created methods in the BetterRectangles class to test 
+the new Utilities, accessors, and mutators.
+
+
+
+
+BetterRectangles
+
+Accepts 4 different types of input
+
+Creates a toString and equals method to return values
+
+Creates new accessors for Area Perimeter Slope and Mid Point
+
+Adds Utilities to test for congruency, equivalency similarity and concentricism
+
+Creates a scale mutator
+
+uses the .this command to compare values
+
